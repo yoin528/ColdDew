@@ -38,6 +38,9 @@ public class ActionHandler implements Handler {
 		event = event.substring(0, event.indexOf("."));
 		Action action = mapping.getAction(path);
 		if(action == null) {
+			action = mapping.getAction(path+"/execute");
+		}
+		if(action == null) {
 			throw new RuntimeException("找不到请求相应的控制器，请检查请求路径：["+target+"]");
 		}
 		
