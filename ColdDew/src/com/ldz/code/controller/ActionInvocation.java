@@ -7,8 +7,8 @@ import com.ldz.code.interceptor.Interceptor;
 
 /**
  * Action调度器
- * @author LDZ
- * @date 2013-12-14 下午06:05:16
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:28:08
  */
 public class ActionInvocation {
 	private Action action;

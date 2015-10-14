@@ -4,8 +4,8 @@ import java.io.IOException;
 
 /**
  * 重定向渲染器
- * @author LDZ
- * @date 2013-12-14 下午06:06:47
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:30:15
  */
 public class RedirectRender extends Render {
 	private String view;
@@ -15,9 +15,9 @@ public class RedirectRender extends Render {
 	}
 
 	@Override
-	public void rander() {
+	public void rander(String viewPath) {
 		try {
-			response.sendRedirect(view);
+			response.sendRedirect(viewPath + view);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

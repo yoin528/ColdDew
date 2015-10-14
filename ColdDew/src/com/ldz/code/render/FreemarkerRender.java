@@ -17,8 +17,8 @@ import freemarker.template.TemplateExceptionHandler;
 
 /**
  * Freemarker渲染器
- * @author LDZ
- * @date 2013-12-14 下午06:06:23
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:30:00
  */
 public class FreemarkerRender extends Render {
 	private static Configuration cfg;
@@ -44,10 +44,10 @@ public class FreemarkerRender extends Render {
 	}
 	@SuppressWarnings("unchecked")
 	@Override
-	public void rander() {
+	public void rander(String viewPath) {
 		Writer out = null;
         try {
-        	 Template t = cfg.getTemplate(view);
+        	 Template t = cfg.getTemplate(viewPath + view);
     		 response.setContentType("text/html; charset=" + cfg.getOutputEncoding());
           	 response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, "
                     + "post-check=0, pre-check=0");

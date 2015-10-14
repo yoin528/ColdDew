@@ -9,8 +9,8 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  * 上传文件管理器
- * @author LDZ
- * @date 2013-12-16 下午09:27:27
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:32:01
  */
 public class UploadManager {
 	private static UploadManager instance = new UploadManager();

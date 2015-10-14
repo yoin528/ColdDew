@@ -4,8 +4,8 @@ import java.io.File;
 
 /**
  * 上传附件类
- * @author LDZ
- * @date 2013-12-16 下午09:11:38
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:31:40
  */
 public class Attachment {
 	private String filename;

@@ -4,8 +4,8 @@ import com.ldz.code.controller.ActionInvocation;
 
 /**
  * 拦截器
- * @author LDZ
- * @date 2013-12-14 下午08:02:38
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:29:18
  */
 public interface Interceptor {
 	public void doInterceptor(ActionInvocation invoke);

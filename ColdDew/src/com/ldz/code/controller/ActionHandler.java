@@ -10,8 +10,8 @@ import com.ldz.code.upload.UploadManager;
 
 /**
  * Action处理类
- * @author LDZ
- * @date 2013-12-14 下午06:05:04
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:27:59
  */
 public class ActionHandler implements Handler {
 
@@ -55,6 +55,6 @@ public class ActionHandler implements Handler {
 			return;
 		}
 		
-		render.rander();
+		render.rander(action.getViewPath());
 	}
 }

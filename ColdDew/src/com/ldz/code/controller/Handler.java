@@ -5,8 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 处理器接口
- * @author LDZ
- * @date 2013-12-14 下午06:05:47
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:28:51
  */
 public interface Handler {
 	public void handler(HttpServletRequest request,HttpServletResponse response)throws Exception;

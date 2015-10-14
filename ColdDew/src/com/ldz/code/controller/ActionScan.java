@@ -15,10 +15,12 @@ import com.ldz.code.annotation.Controller;
 
 /**
  * Action扫描器，用于注解扫描控制器
- * @author LDZ
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:28:32
  */
 public class ActionScan {
 	private Map<String, Class<?>> ctrs = new HashMap<String, Class<?>>();
+	private Map<String, String> viewPaths = new HashMap<String, String>();
 	private String pkgs;
 	private boolean isScan = false;
 	private Pattern STANDARD_SPLIT = Pattern.compile("[\\s,]+");
@@ -36,8 +38,8 @@ public class ActionScan {
 	}
 	/**
 	 * 扫描包
-	 * @author LDZ
-	 * @date 2013-12-14 下午05:57:17
+	 * @author LDZ   
+	 * @date 2015年10月14日 上午11:28:38 
 	 * @param pkg
 	 */
 	public void scanPkg(String pkg) {
@@ -118,6 +120,8 @@ public class ActionScan {
 							+ "与" + clazs.getName() + "出现重复，请检查配置路径名：" + path);
 				}
 				ctrs.put(path, clazz);
+				String viewPath = ctr.viewPath();
+				viewPaths.put(path, viewPath);//模板路径
 			}
 		} catch (Throwable t) {
 			t.printStackTrace();
@@ -133,6 +137,9 @@ public class ActionScan {
 	}
 	public Map<String, Class<?>> getCtrs() {
 		return ctrs;
+	}
+	public Map<String, String> getViewPaths() {
+		return viewPaths;
 	}
 	
 }

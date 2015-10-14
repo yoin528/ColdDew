@@ -19,8 +19,8 @@ import org.apache.commons.io.FilenameUtils;
 import com.ldz.code.config.SystemContext;
 /**
  * HttpServletRequest包装器，包装文件上传
- * @author LDZ
- * @date 2013-12-16 下午08:55:28
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:31:49
  */
 public class MultipartRequestWrapper extends HttpServletRequestWrapper {
 	

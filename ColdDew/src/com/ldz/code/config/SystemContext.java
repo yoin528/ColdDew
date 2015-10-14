@@ -9,8 +9,8 @@ import com.ldz.code.render.RenderFactory;
 
 /**
  * 系统上下文，用于获取系统所需类
- * @author LDZ
- * @date 2013-12-14 下午06:02:30
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:27:32
  */
 public class SystemContext {
 	private static final SystemContext instance = new SystemContext();
@@ -36,7 +36,7 @@ public class SystemContext {
 		RenderFactory.getInstance().init(servletContext, constant);
 		ActionScan scan = new ActionScan(constant.getControllerPkg());
 		scan.autoScan();
-		mapping = new ActionMapping(scan.getCtrs(),interceptors.getGlobalInterceptor());
+		mapping = new ActionMapping(scan.getCtrs(),scan.getViewPaths(),interceptors.getGlobalInterceptor());
 		mapping.build();
 	}
 }

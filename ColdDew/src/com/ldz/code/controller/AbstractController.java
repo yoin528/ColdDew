@@ -8,8 +8,8 @@ import com.ldz.code.render.RenderFactory;
 import com.ldz.code.render.RenderType;
 /**
  * 控制器，所有Action父类
- * @author LDZ
- * @date 2013-12-14 下午06:02:55
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:27:42
  */
 public abstract class AbstractController {
 	protected HttpServletRequest request;

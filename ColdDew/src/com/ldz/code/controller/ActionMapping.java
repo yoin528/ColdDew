@@ -14,17 +14,19 @@ import com.ldz.code.interceptor.Interceptor;
 
 /**
  * Action映射类
- * @author LDZ
- * @date 2013-12-14 下午06:05:28
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:28:19
  */
 public class ActionMapping {
 	final Map<String,Action> mapping = new HashMap<String,Action>();
 	private Map<String,Class<?>> controllers;
+	private Map<String, String> viewPaths;
 	private List<GlobalInterceptor> globalInterceptors;
 	
-	public ActionMapping(Map<String, Class<?>> controllers,List<GlobalInterceptor> globalInterceptors) {
+	public ActionMapping(Map<String, Class<?>> controllers,Map<String, String> viewPaths,List<GlobalInterceptor> globalInterceptors) {
 		this.controllers = controllers;
 		this.globalInterceptors = globalInterceptors;
+		this.viewPaths = viewPaths;
 	}
 	
 	public Action getAction(String url) {
@@ -54,7 +56,13 @@ public class ActionMapping {
 						throw new RuntimeException("控制器：[" + controller.getName() + "]与[" + mapping.get(actionKey).getController().getName()+"]存在路径重复，请检查："+actionKey);
 					}
 					buildInterceptors(controller, method,interceptors);
-					mapping.put(actionKey, new Action(controller, method, controllerKey,interceptors));
+					String viewPath = viewPaths.get(controllerKey);
+					if(viewPath!=null && !"".equals(viewPath)) {
+						if(!viewPath.endsWith("/")) {
+							viewPath += "/";
+						}
+					}
+					mapping.put(actionKey, new Action(controller, method,viewPath,controllerKey,interceptors));
 				}
 			}
 		}

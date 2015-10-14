@@ -7,8 +7,8 @@ import com.ldz.code.render.RenderType;
 
 /**
  * 系统常量类，用于存储系统所需值，如字符编码，默认渲染器等，可在自定义配置时存储系统所需值
- * @author LDZ
- * @date 2013-12-14 下午06:01:12
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:27:25
  */
 public class SystemConstant {
 	private Map<String,Object> properties = new HashMap<String,Object>();

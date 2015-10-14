@@ -6,8 +6,8 @@ import com.ldz.code.config.SystemConstant;
 
 /**
  * 渲染器接口
- * @author LDZ
- * @date 2013-12-14 下午06:07:09
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:30:32
  */
 public class RenderFactory {
 	private static final RenderFactory instance = new RenderFactory();

@@ -6,8 +6,8 @@ import javax.servlet.ServletException;
 
 /**
  * JSP渲染器
- * @author LDZ
- * @date 2013-12-14 下午06:06:36
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:30:08
  */
 public class JspRender extends Render {
 	private String view;
@@ -17,9 +17,9 @@ public class JspRender extends Render {
 	}
 
 	@Override
-	public void rander() {
+	public void rander(String viewPath) {
 		try {
-			request.getRequestDispatcher(view).forward(request, response);
+			request.getRequestDispatcher(viewPath + view).forward(request, response);
 		} catch (ServletException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

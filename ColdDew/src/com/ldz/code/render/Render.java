@@ -5,8 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 渲染器接口
- * @author LDZ
- * @date 2013-12-14 下午06:06:58
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:30:23
  */
 public abstract class Render {
 	protected transient HttpServletRequest request;
@@ -18,5 +18,5 @@ public abstract class Render {
 		return this;
 	}
 	
-	public abstract void rander();
+	public abstract void rander(String viewPath);
 }
