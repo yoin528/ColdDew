@@ -9,8 +9,9 @@ import java.lang.annotation.Target;
 import com.ldz.code.interceptor.Interceptor;
 
 /**
- * @author LDZ
- * @date 2013-12-14 下午08:54:27
+ * 方法前注解
+ * @author LDZ   
+ * @date 2015年10月14日 上午11:26:10
  */
 @Target({ElementType.TYPE,ElementType.METHOD})   
 @Retention(RetentionPolicy.RUNTIME)   
