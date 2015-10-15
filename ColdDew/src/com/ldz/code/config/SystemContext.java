@@ -16,6 +16,7 @@ public class SystemContext {
 	private static final SystemContext instance = new SystemContext();
 	private SystemConstant constant = new SystemConstant();
 	private Interceptors interceptors = new Interceptors();
+	private ServletContext servletContext;
 	private ActionMapping mapping;
 	private SystemContext() {}
 	
@@ -33,10 +34,16 @@ public class SystemContext {
 	public void init(SystemConfig config,ServletContext servletContext) {
 		config.defaultConfig(constant);
 		config.interceptor(interceptors);
-		RenderFactory.getInstance().init(servletContext, constant);
+		this.servletContext = servletContext;
+		RenderFactory.getInstance().init(this.servletContext, constant);
 		ActionScan scan = new ActionScan(constant.getControllerPkg());
 		scan.autoScan();
 		mapping = new ActionMapping(scan.getCtrs(),scan.getViewPaths(),interceptors.getGlobalInterceptor());
 		mapping.build();
 	}
+
+	public ServletContext getServletContext() {
+		return servletContext;
+	}
+	
 }
