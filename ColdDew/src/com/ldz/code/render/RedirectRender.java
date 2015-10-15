@@ -17,7 +17,7 @@ public class RedirectRender extends Render {
 	@Override
 	public void rander(String viewPath) {
 		try {
-			response.sendRedirect(viewPath + view);
+			response.sendRedirect(view);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

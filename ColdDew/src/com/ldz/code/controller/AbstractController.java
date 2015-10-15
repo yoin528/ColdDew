@@ -30,7 +30,7 @@ public abstract class AbstractController {
 	 * @date 2013-12-14 下午06:17:29
 	 * @param view
 	 */
-	protected void render(String view) {
+	public void render(String view) {
 		render = RenderFactory.getInstance().getDefaultRender(view);
 	}
 	/**
@@ -39,7 +39,7 @@ public abstract class AbstractController {
 	 * @date 2013-12-14 下午06:17:18
 	 * @param view
 	 */
-	protected void renderJsp(String view) {
+	public void renderJsp(String view) {
 		render = RenderFactory.getInstance().getRender(view,RenderType.JSP);
 	}
 	/**
@@ -48,7 +48,7 @@ public abstract class AbstractController {
 	 * @date 2013-12-14 下午06:17:38
 	 * @param view
 	 */
-	protected void renderFrk(String view) {
+	public void renderFrk(String view) {
 		render = RenderFactory.getInstance().getRender(view,RenderType.FREEMARKER);
 	}
 	/**
@@ -57,23 +57,23 @@ public abstract class AbstractController {
 	 * @date 2013-12-14 下午06:17:48
 	 * @param view
 	 */
-	protected void renderVelocity(String view) {
+	public void renderVelocity(String view) {
 		render = RenderFactory.getInstance().getRender(view,RenderType.VELOCITY);
 	}
-	protected void redirect(String view) {
+	public void redirect(String view) {
 		render = RenderFactory.getInstance().getRedirect(view);
 	}
 	
-	protected String getParameter(String name) {
+	public String getParameter(String name) {
 		return request.getParameter(name);
 	}
-	protected void putData(String name,Object value) {
+	public void putData(String name,Object value) {
 		request.setAttribute(name, value);
 	}
-	protected Object getSession(String name) {
+	public Object getSession(String name) {
 		return request.getSession().getAttribute(name);
 	}
-	protected void setSession(String key,Object obj) {
+	public void setSession(String key,Object obj) {
 		request.getSession().setAttribute(key, obj);
 	}
 	
