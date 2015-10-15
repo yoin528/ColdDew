@@ -76,7 +76,9 @@ public abstract class AbstractController {
 	public void setSession(String key,Object obj) {
 		request.getSession().setAttribute(key, obj);
 	}
-	
+	public void removeSession(String key) {
+		request.getSession().removeAttribute(key);
+	}
 	Render getRender() {
 		return render;
 	}
