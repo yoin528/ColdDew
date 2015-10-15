@@ -70,6 +70,12 @@ public abstract class AbstractController {
 	protected void putData(String name,Object value) {
 		request.setAttribute(name, value);
 	}
+	protected Object getSession(String name) {
+		return request.getSession().getAttribute(name);
+	}
+	protected void setSession(String key,Object obj) {
+		request.getSession().setAttribute(key, obj);
+	}
 	
 	Render getRender() {
 		return render;
